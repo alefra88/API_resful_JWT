@@ -36,3 +36,4 @@ D:\JWTAPI\JWT_API\JWT_API\obj\Debug\net6.0\refint\JWT_API.dll
 D:\JWTAPI\JWT_API\JWT_API\obj\Debug\net6.0\JWT_API.pdb
 D:\JWTAPI\JWT_API\JWT_API\obj\Debug\net6.0\JWT_API.genruntimeconfig.cache
 D:\JWTAPI\JWT_API\JWT_API\obj\Debug\net6.0\ref\JWT_API.dll
+D:\JWTAPI\JWT_API\JWT_API\bin\Debug\net6.0\Dapper.dll

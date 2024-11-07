@@ -27,6 +27,8 @@ builder.Services.AddScoped<ISqlCon, SqlCon>();
 //reps
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<IUsuarioLoginRepository, UsuarioLoginRepository>();
+builder.Services.AddScoped<ILoginServicio, LoginServicio>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

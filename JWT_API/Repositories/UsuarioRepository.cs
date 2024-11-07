@@ -15,7 +15,7 @@ namespace JWT_API.Repositories
         public async Task<List<UsuarioListaDTO>> GetAsync()
         {
             var listaUsuarios = new List<UsuarioListaDTO>();
-            var storedProcedure = "spSeleccionarDatosUsuarios";
+            var storedProcedure = "spSeleccionarDatosUsuarios2";
             using(SqlConnection con = await _sqlCon.SqlConAsync())
             {
                 using var command = new SqlCommand(storedProcedure, con)
@@ -35,7 +35,7 @@ namespace JWT_API.Repositories
         {
             return new UsuarioListaDTO
             {
-                IdUsuario = reader.GetInt32(reader.GetOrdinal("IdUsuario")),
+                IdUsuario = reader.GetInt32(reader.GetOrdinal("Id")),
                 FechaAlta = reader.GetDateTime(reader.GetOrdinal("FechaAlta")),
                 Email = reader.GetString(reader.GetOrdinal("email")),
                 FechaBaja = reader.IsDBNull(reader.GetOrdinal("FechaBaja")) ? (DateTime?)null: reader.GetDateTime(reader.GetOrdinal("FechaBaja"))
