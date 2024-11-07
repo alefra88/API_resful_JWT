@@ -10,9 +10,11 @@ namespace JWT_API.Controllers
     public class LoginController : ControllerBase
     {
         private readonly ILoginServicio _loginServicio;
-        public LoginController(ILoginServicio loginServicio)
+        private readonly IGenerateTokenService _generateTokenService;
+        public LoginController(ILoginServicio loginServicio, IGenerateTokenService generateTokenService)
         {
             _loginServicio = loginServicio;
+            _generateTokenService = generateTokenService;
         }
 
         [HttpPost]
@@ -23,8 +25,8 @@ namespace JWT_API.Controllers
 
             if (isAuthenticated)
             {
-                // Si el login es exitoso, devolvemos un 200 OK con un mensaje
-                return Ok("Usuario logeado exitosamente");
+                var token = _generateTokenService.GenerateAsync(loginDTO);
+                return Ok(new { Token = token });
             }
             else
             {

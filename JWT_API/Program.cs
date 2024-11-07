@@ -29,6 +29,9 @@ builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IUsuarioLoginRepository, UsuarioLoginRepository>();
 builder.Services.AddScoped<ILoginServicio, LoginServicio>();
+builder.Services.AddScoped<IAuthenticateRepo, AuthenticateRepo>();
+builder.Services.AddScoped<IGenerateTokenRepo, GenerateTokenRepo>();
+builder.Services.AddScoped<IGenerateTokenService, GenerateTokenService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
